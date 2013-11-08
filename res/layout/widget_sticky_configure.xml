@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/sticky_comment_RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/sticky_comment_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:hint="@string/sticky_Hint" />
+
+        <Button
+            android:id="@+id/sticky_Clean_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onStickyCleanButtonClick"
+            android:text="@string/sticky_Clean" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/sticky_Speech_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sticky_comment_RelativeLayout"
+        android:onClick="onStickySpeechButtonClick"
+        android:text="@string/sticky_Speech"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/sticky_icon_RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sticky_Speech_Button"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/sticky_icon_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/sticky_icon" />
+
+        <Spinner
+            android:id="@+id/sticky_icons_Spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/sticky_icon_TextView"
+            android:entries="@array/sticky_icons" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sticky_back_RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sticky_icon_RelativeLayout"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/sticky_back_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/sticky_back" />
+
+        <Spinner
+            android:id="@+id/sticky_backs_Spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/sticky_back_TextView"
+            android:entries="@array/sticky_backs" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sticky_back_RelativeLayout"
+        android:layout_centerHorizontal="true"
+        android:onClick="onOKButtonClick"
+        android:text="@string/common_OKButton" />
+
+</RelativeLayout>
