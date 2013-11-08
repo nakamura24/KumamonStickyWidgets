@@ -12,7 +12,6 @@ package jp.widgets.kumamon.sticky.ics;
 import jp.widgets.kumamon.lib.*;
 import jp.widgets.kumamon.sticky.R;
 import static jp.widgets.kumamon.sticky.StickyWidgetConstant.*;
-
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
@@ -55,6 +54,15 @@ public class KumamonStickyWidget extends WidgetBase {
 							AppWidgetManager.INVALID_APPWIDGET_ID);
 					Log.d(TAG, "appWidgetId=" + String.valueOf(appWidgetId));
 					if (appWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
+						String comment = extras.getString(COMMENT);
+						int icon = extras.getInt(ICON, 0);
+						int back = extras.getInt(BACK, 0);
+
+						StaticHash hash = new StaticHash(context);
+						hash.put(COMMENT, String.valueOf(appWidgetId), comment);
+						hash.put(ICON, String.valueOf(appWidgetId), icon);
+						hash.put(BACK, String.valueOf(appWidgetId), back);
+
 						updateWidget(context, appWidgetId);
 					}
 				}
